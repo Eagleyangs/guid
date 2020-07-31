@@ -1,0 +1,20 @@
+*****
+#include "Guid.hpp"
+
+#ifdef WIN32
+#ifdef _DEBUG
+#pragma comment(lib, "xgd.lib")
+#else
+#pragma comment(lib, "xg.lib")
+#endif
+#else // other OS
+
+#endif //WIN32
+
+Usage:
+std::cout << xg::newGuid() << std::endl;
+
+Linux
+add to MakeFile:
+LIB = libxg.a
+LDFLAGS = -luuid # sudo apt-get install uuid-dev 
